@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <%- include('./partials/messages.ejs') %>
+    <form action="/users/register" method="POST">
+        <div>
+            <label for="Name">Name</label>
+            <input 
+                type="Name" 
+                name="name"     
+                id="name" 
+                value="<%= typeof name != 'undefined' ? name : '' %>" required>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input 
+                type="email" 
+                name="email" 
+                id="email"
+                value="<%= typeof email != 'undefined' ? email : '' %>" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input 
+                type="password" 
+                name="password" 
+                id="password" 
+                value="<%= typeof email != 'undefined' ? password : '' %>" required>
+        </div>
+        <div>
+            <label for="password">Confirm Password</label>
+            <input 
+                type="password" 
+                name="password2" 
+                id="password2" 
+                value="<%= typeof email != 'undefined' ? password2 : '' %>" required>
+        </div>
+        <button type="submit">Register</button>
+    </form>
+    <p>Have an account ?</p><a href="/users/login">Login</a>
+
+    
+</body>
+</html>
